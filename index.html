@@ -1,0 +1,68 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Kedren
+ * @Date: 3019-12-25 09:15:49
+ * @LastEditors  : Kedren
+ * @LastEditTime : 2019-12-26 15:10:15
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Big BUG</title>
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+    <script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="scripts/musicModel.js"></script>
+    <script src="scripts/index.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/mycss/index.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">BUG</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active" type="music"><a>搜索音乐</a></li>
+                    <li type="video"><a>搜索电影</a></li>
+                    <li type="image"><a>搜索图片</a></li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="searchContent" placeholder="Search">
+                    </div>
+                    <button type="button" class="btn btn-default submit">搜索</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- Content Start-->
+    <div class="content container">
+        <div class="row contentList">
+        </div>
+        <nav aria-label="Page navigation" class="text-center">
+            <ul class="pagination">
+            </ul>
+        </nav>
+    </div>
+    <!-- Content End -->
+</body>
+
+</html>
