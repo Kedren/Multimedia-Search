@@ -4,7 +4,7 @@
  * @Autor: Kedren
  * @Date: 2019-12-25 19:21:59
  * @LastEditors  : Kedren
- * @LastEditTime : 2019-12-26 23:51:49
+ * @LastEditTime : 2019-12-28 12:42:22
  */
 
 //音乐请求地址
@@ -76,8 +76,9 @@ function onSubmit() {
     var parameter = {
         name: searchContent.prop("value")
     };
+    // console.log(parameter);
     // console.log(key);
-    if (key != "") {
+    if (parameter != "") {
         $(".submit").click(refresh(musicUrl, parameter, 0, pageSize));
     }
 }
