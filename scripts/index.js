@@ -4,7 +4,7 @@
  * @Autor: Kedren
  * @Date: 2019-12-25 19:21:59
  * @LastEditors  : Kedren
- * @LastEditTime : 2019-12-28 12:42:22
+ * @LastEditTime : 2020-01-03 15:25:38
  */
 
 //音乐请求地址
@@ -13,6 +13,7 @@ var flag = 0;
 var dataList = [];
 var currentPage = 1;
 var pageSize = 6;
+var currentSongid = 0;
 
 searchType = {
     music: 0,
@@ -25,6 +26,10 @@ window.onload = function () {
     $(".navbar-nav>li").click(function () {
         setFlag($(this));
     });
+    playBtnClick();
+    backwardBtnClick();
+    forwardBtnClick();
+    playerVisiable()
 }
 /**
  *设置搜索类型
@@ -91,8 +96,8 @@ function onSubmit() {
  * @param {*} author 歌手
  * @returns
  */
-function song(url, title, author) {
-    var content = '<div class="col-md-4 col-sm-6 col-xs-12"> <div class = "infoItem text-center thumbnail"> <img src = "' + url + '"class = "pic" alt = ""><p class = "title" > 歌曲名：' + title + ' </p> <p class = "author"> 歌手：' + author + '</p> </div > </div>'
+function song(url, songid, title, author) {
+    var content = '<div class="col-md-4 col-sm-6 col-xs-12"> <div class = "infoItem text-center" ><div class="playItem img-responsive"><img src = "' + url + '" class="pic" alt=""> <div class = "playBtn img-responsive" data-songid = "' + songid + '" ><img src = "images/playBtn.png" alt = ""> </div></div><p class ="title"> 歌曲名：' + title + ' </p><p class = "author"> 歌手：' + author + '</p></div></div> '
     return content;
 }
 /**
@@ -125,6 +130,7 @@ function generatePaging(total, pageSize) {
     $(".pagination>li").click(function () {
         setCurrentPage($(this));
     });
+    addClick();
 }
 /**
  *构造音乐列表
@@ -137,7 +143,7 @@ function musicList(data, start, end) {
     }
     var content = '';
     for (var i = start; i < end; i++) {
-        content += song(data[i].pic, data[i].title, data[i].author);
+        content += song(data[i].pic, data[i].songid, data[i].title, data[i].author);
     }
     return content;
 }
@@ -152,6 +158,46 @@ function tempData(data, type) {
     }
 
 }
+
+function addClick() {
+    var playItems = $(".playBtn");
+    playItems.click(function () {
+        currentSongid = this.getAttribute("data-songid")
+        playByUrl(getUrl(currentSongid));
+    });
+}
+
+function getUrl(id) {
+    return dataList[getIndex(id)].url;
+}
+
+function getIndex(id) {
+    for (var i = 0; i < dataList.length; i++) {
+        if (dataList[i].songid == id) {
+            return i;
+        }
+    }
+}
+
+function playerVisiable() {
+    var player = $('.player');
+    playerAnim(player, "-" + player.css("height"));
+    $(".player>button").click(function () {
+        if (player.css("bottom") == "0px") {
+            playerAnim(player, "-" + player.css("height"));
+        } else {
+            playerAnim(player, "0");
+        }
+
+    });
+}
+
+function playerAnim(player, value) {
+    player.animate({
+        bottom: value
+    }, 500, function () {});
+}
+
 /**
  *执行Ajax刷新
  *

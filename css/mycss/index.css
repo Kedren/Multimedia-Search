@@ -15,3 +15,45 @@
 .pic {
     margin-bottom: 10px;
 }
+
+.playItem {
+    position: relative;
+    overflow: hidden;
+}
+
+.playItem:hover .playBtn {
+    transform: translateX(0%);
+}
+
+.playBtn {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
+
+.player {
+    position: fixed;
+    bottom: -8%;
+    background-color: #888;
+    width: 100%;
+    z-index: 999;
+    padding: 10px;
+}
+
+.player>div {
+    width: 130px;
+}
+
+.player>button {
+    position: absolute;
+    top: -25px;
+    right: 10px;
+}
+
+footer {
+    margin: 50px;
+}
