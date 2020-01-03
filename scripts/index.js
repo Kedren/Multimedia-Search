@@ -4,15 +4,20 @@
  * @Autor: Kedren
  * @Date: 2019-12-25 19:21:59
  * @LastEditors  : Kedren
- * @LastEditTime : 2020-01-03 22:25:01
+ * @LastEditTime : 2020-01-03 22:28:02
  */
 
 //音乐请求地址
 var musicUrl = "https://api.apiopen.top/searchMusic?name=";
+//搜索类型标记
 var flag = 0;
+//缓存数据列表
 var dataList = [];
+//当前分页
 var currentPage = 1;
+//分页总数
 var pageSize = 6;
+//当前播放音乐ID
 var currentSongid = 0;
 
 searchType = {
