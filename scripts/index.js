@@ -4,7 +4,7 @@
  * @Autor: Kedren
  * @Date: 2019-12-25 19:21:59
  * @LastEditors  : Kedren
- * @LastEditTime : 2020-01-03 15:25:38
+ * @LastEditTime : 2020-01-03 22:25:01
  */
 
 //音乐请求地址
@@ -180,7 +180,10 @@ function getIndex(id) {
 }
 
 function playerVisiable() {
+    var down = "glyphicon-chevron-down";
+    var up = "glyphicon-chevron-up";
     var player = $('.player');
+    var icon = $(".player>button>span");
     playerAnim(player, "-" + player.css("height"));
     $(".player>button").click(function () {
         if (player.css("bottom") == "0px") {
@@ -188,7 +191,8 @@ function playerVisiable() {
         } else {
             playerAnim(player, "0");
         }
-
+        icon.toggleClass(down);
+        icon.toggleClass(up);
     });
 }
 
