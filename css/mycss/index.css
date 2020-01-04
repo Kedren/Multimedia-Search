@@ -1,3 +1,21 @@
+/*品牌图标*/
+.navbar-brand {
+    padding: 0;
+    margin: 0 !important;
+}
+
+hr {
+    color: black;
+}
+
+#music_charts {
+    width: 150px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 .content {
     width: 80%;
     /* background-color: aqua; */
@@ -12,8 +30,10 @@
     padding: 10px;
 }
 
-.pic {
-    margin-bottom: 10px;
+#charts_row {
+    border: 1px solid black;
+    margin: 15px 0;
+    padding: 15px;
 }
 
 .playItem {
@@ -38,7 +58,7 @@
 .player {
     position: fixed;
     bottom: -8%;
-    background-color: #888;
+    background-color: #eee;
     width: 100%;
     z-index: 999;
     padding: 10px;

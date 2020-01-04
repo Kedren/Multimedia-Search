@@ -4,7 +4,7 @@
  * @Autor: Kedren
  * @Date: 2019-12-25 19:21:59
  * @LastEditors  : Kedren
- * @LastEditTime : 2020-01-03 22:28:02
+ * @LastEditTime : 2020-01-04 20:12:00
  */
 
 //音乐请求地址
@@ -34,7 +34,8 @@ window.onload = function () {
     playBtnClick();
     backwardBtnClick();
     forwardBtnClick();
-    playerVisiable()
+    playerVisiable();
+    init();
 }
 /**
  *设置搜索类型
